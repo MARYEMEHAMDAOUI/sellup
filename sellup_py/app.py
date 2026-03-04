@@ -190,9 +190,9 @@ def sidebar_nav():
             ("reports",     "◷",  "Rapports"),
         ]
         if user["role"] == "admin":
-            pages.append(("users", "◉", "Utilisateurs"))
+            modules.append(("users", "◉", "Utilisateurs"))
 
-        for page_id, icon, label in pages:
+        for page_id, icon, label in modules:
             active = st.session_state.page == page_id
             if st.sidebar.button(
                 f"{icon}  {label}",
