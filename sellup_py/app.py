@@ -180,7 +180,7 @@ def sidebar_nav():
         )
         low_stock = sum(1 for p in st.session_state.products if p["stock"] <= p["minStock"])
 
-        pages = [
+        modules = [
             ("dashboard",   "◈",  "Tableau de Bord"),
             ("new_sale",    "⊞",  "Nouvelle Vente"),
             ("sales",       "◰",  "Ventes"),
@@ -246,25 +246,25 @@ def main():
     page = st.session_state.page
 
     if page == "dashboard":
-        from pages import pg_dashboard as pg
+        from modules import pg_dashboard as pg
     elif page == "new_sale":
-        from pages import pg_new_sale as pg
+        from modules import pg_new_sale as pg
     elif page == "sales":
-        from pages import pg_sales as pg
+        from modules import pg_sales as pg
     elif page == "livraisons":
-        from pages import pg_livraisons as pg
+        from modules import pg_livraisons as pg
     elif page == "clients":
-        from pages import pg_clients as pg
+        from modules import pg_clients as pg
     elif page == "products":
-        from pages import pg_products as pg
+        from modules import pg_products as pg
     elif page == "reports":
-        from pages import pg_reports as pg
+        from modules import pg_reports as pg
     elif page == "users":
-        from pages import pg_users as pg
+        from modules import pg_users as pg
     elif page == "profile":
-        from pages import pg_profile as pg
+        from modules import pg_profile as pg
     else:
-        from pages import pg_dashboard as pg
+        from modules import pg_dashboard as pg
 
     pg.render()
 
